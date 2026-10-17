@@ -8,25 +8,6 @@ const { brand, nav } = content;
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  // Header shadow once the page is scrolled past the top.
-  useEffect(() => {
-    let ticking = false;
-    const update = () => {
-      setScrolled(window.scrollY > 8);
-      ticking = false;
-    };
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(update);
-        ticking = true;
-      }
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Close the mobile menu on Escape and when widening to desktop.
   useEffect(() => {
@@ -46,11 +27,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 h-[68px] border-b border-white/10 ${
-        scrolled
-          ? "bg-[#11161d] shadow-[0_8px_24px_rgba(0,0,0,.28)]"
-          : "bg-ink"
-      }`}
+      className="fixed inset-x-0 top-0 z-40 h-[68px] border-b border-white/10 bg-ink"
     >
       <div className="container-site flex h-[68px] items-center justify-between gap-4">
         <a
@@ -83,7 +60,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="relative py-1.5 text-[15.5px] font-medium text-white/80 no-underline transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-safety after:transition-transform hover:text-white hover:after:scale-x-100"
+              className="relative py-1.5 text-[15.5px] font-medium text-white/80 no-underline after:absolute after:bottom-0 after:left-0 after:hidden after:h-0.5 after:w-full after:bg-safety hover:text-white hover:after:block"
             >
               {item.label}
             </a>
@@ -108,21 +85,17 @@ export function Header() {
         >
           <span
             aria-hidden="true"
-            className={`block h-0.5 w-full rounded-sm bg-white transition-all duration-200 ${
-              menuOpen ? "translate-y-[7px] rotate-45" : ""
+            className="block h-0.5 w-full rounded-sm bg-white"
+          />
+          <span
+            aria-hidden="true"
+            className={`block h-0.5 w-full rounded-sm bg-white ${
+              menuOpen ? "hidden" : ""
             }`}
           />
           <span
             aria-hidden="true"
-            className={`block h-0.5 w-full rounded-sm bg-white transition-opacity duration-200 ${
-              menuOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            aria-hidden="true"
-            className={`block h-0.5 w-full rounded-sm bg-white transition-all duration-200 ${
-              menuOpen ? "-translate-y-[7px] -rotate-45" : ""
-            }`}
+            className="block h-0.5 w-full rounded-sm bg-white"
           />
         </button>
       </div>
