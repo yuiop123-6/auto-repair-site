@@ -33,7 +33,7 @@ export function Faq() {
         </div>
 
         <div className="grid gap-9 min-[900px]:grid-cols-[340px_1fr] min-[900px]:items-start min-[900px]:gap-[52px]">
-          <aside className="self-start rounded-[10px] border border-line bg-white p-[26px] min-[900px]:sticky min-[900px]:top-[92px]">
+          <aside className="self-start rounded-[10px] border border-line bg-white p-[26px]">
             <h3 className="text-[22px]">Still have a question?</h3>
             <p className="mt-2.5 text-[15px] text-steel">
               Send us your vehicle details and a preferred contact method, and
