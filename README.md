@@ -48,7 +48,7 @@ npm run start    # 以生产模式启动
 - 联系表单前端校验：姓名 ≥ 2 字符、邮箱格式、问题描述 ≥ 10 字符；错误显示在对应控件附近，无效不提交
 - 校验通过后生成 `mailto:` 邮件草稿（主题 + 含姓名/邮箱/问题描述的正文）
 - 响应式断点覆盖 375px / 768px / 1440px，375px 无横向溢出
-- 三档宽度整页截图见 [screenshots/](./screenshots/)
+- 三档宽度整页截图见 [screenshots/](./screenshots/)；关键交互演示（移动端菜单展开、FAQ 展开、表单校验错误、提交成功）见 [screenshots/interactions/](./screenshots/interactions/)
 
 ## 项目结构
 
