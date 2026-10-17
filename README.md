@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Northstar Auto Care — 汽车维修服务单页网站
 
-## Getting Started
+面向汽车维修服务商的英文单页响应式官网，包含服务介绍、关于与优势、客户评价、常见问题与联系咨询入口。视觉语言对齐参考稿（深墨蓝 + 安全橙、Barlow Condensed 标题字 + Barlow 正文字）。
 
-First, run the development server:
+## 技术栈
+
+- Next.js 16（App Router，Cache Components）+ React 19 + TypeScript
+- Tailwind CSS 4（设计令牌见 `app/globals.css` 的 `@theme`）
+- 自托管 Barlow / Barlow Condensed 字体（`public/fonts`，通过 `next/font/local` 加载）
+- 全部业务文案集中维护于 `site_content.json`
+
+## 环境要求
+
+- Node.js LTS（建议 ≥ 20）
+- npm ≥ 10
+
+## 安装与启动
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # 开发服务器 http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 生产构建
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start    # 以生产模式启动
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 内容配置
 
-## Learn More
+所有栏目文案（品牌、导航、首屏、服务、关于、评价、FAQ、联系、页脚）均读取自项目根目录的 [site_content.json](./site_content.json)，组件内不硬编码业务文案。修改文案后重新构建即可。
 
-To learn more about Next.js, take a look at the following resources:
+关键配置项：
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| 字段 | 说明 |
+| --- | --- |
+| `contact.email` | 联系邮箱；联系表单生成的 mailto 草稿收件地址 |
+| `contact.subject` | 邮件草稿主题（Website Service Inquiry） |
+| `contact.phone` / `contact.phoneHref` | 展示电话与 tel: 链接 |
+| `hero.image` / `about.image` | 图片路径（`public/assets`）与 alt 文本 |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 功能与验收
 
-## Deploy on Vercel
+- 固定顶部导航 + 移动端汉堡菜单（Escape 可关闭）；`scroll-padding-top` 处理锚点遮挡
+- 4 条 FAQ 手风琴，按钮控制，`aria-expanded` 状态同步，支持 Tab + Enter 键盘操作
+- 联系表单前端校验：姓名 ≥ 2 字符、邮箱格式、问题描述 ≥ 10 字符；错误显示在对应控件附近，无效不提交
+- 校验通过后生成 `mailto:` 邮件草稿（主题 + 含姓名/邮箱/问题描述的正文）
+- 响应式断点覆盖 375px / 768px / 1440px，375px 无横向溢出
+- 三档宽度整页截图见 [screenshots/](./screenshots/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 项目结构
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/            # layout（元信息/字体）、page（页面组装）、globals.css（设计令牌）
+components/     # Header、Hero、Services、About、Reviews、Faq、Contact、ContactForm、Footer
+lib/            # content.ts（统一内容入口）、icons.tsx（内联 SVG 图标集）
+public/assets/  # 首屏与关于区图片
+public/fonts/   # 自托管 Barlow 系列字体
+site_content.json
+```

@@ -1,0 +1,150 @@
+{
+  "brand": {
+    "name": "Northstar Auto Care",
+    "wordmark": "NORTHSTAR",
+    "wordmarkTail": "AUTO CARE",
+    "tagline": "Reliable auto care, clearly explained."
+  },
+  "nav": [
+    { "label": "Services", "href": "#services" },
+    { "label": "About", "href": "#about" },
+    { "label": "Reviews", "href": "#reviews" },
+    { "label": "FAQ", "href": "#faq" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "hero": {
+    "eyebrow": "Reliable auto care, clearly explained.",
+    "headline": "Keep your car ready for the road.",
+    "subheading": "Diagnostics, maintenance, and repairs with transparent estimates.",
+    "primaryCta": { "label": "Request an Estimate", "href": "#contact" },
+    "secondaryCta": { "label": "View Services", "href": "#services" },
+    "image": {
+      "src": "/assets/hero.jpg",
+      "alt": "Northstar Auto Care technician servicing a car raised on a hydraulic lift in a clean workshop"
+    },
+    "badge": "Transparent estimates before any work begins"
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "heading": "Core services, clearly explained",
+    "subheading": "Three core service lines cover everyday care for your vehicle — diagnosed, estimated, and serviced with clear communication at every stage.",
+    "items": [
+      {
+        "icon": "diagnostics",
+        "name": "Diagnostic Inspection",
+        "description": "Understand warning lights and performance issues before approving work."
+      },
+      {
+        "icon": "brakes",
+        "name": "Brake Service",
+        "description": "Inspection and maintenance for reliable stopping performance."
+      },
+      {
+        "icon": "maintenance",
+        "name": "Oil & Filter Change",
+        "description": "Routine maintenance for everyday driving."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About us",
+    "heading": "About Our Shop",
+    "paragraphs": [
+      "We provide careful diagnostics, reliable repairs, and clear communication at every stage of service.",
+      "From the first inspection to the final invoice, you always know what we found, what we recommend, and what it will cost — before any work begins."
+    ],
+    "image": {
+      "src": "/assets/about.jpg",
+      "alt": "Two Northstar Auto Care technicians reviewing engine diagnostics on a tablet beside a vehicle with its hood open"
+    },
+    "advantages": [
+      {
+        "icon": "quote",
+        "title": "Transparent estimates",
+        "description": "Every job starts with a clear estimate. You approve the scope and price before we pick up a wrench — no surprise charges."
+      },
+      {
+        "icon": "updates",
+        "title": "Clear service updates",
+        "description": "We explain findings in plain language and keep you informed at every stage, so you always know where your vehicle stands."
+      },
+      {
+        "icon": "scheduling",
+        "title": "Straightforward scheduling",
+        "description": "Send the contact form or call the shop with your vehicle details, and we confirm a time that works — no complicated booking process."
+      }
+    ]
+  },
+  "reviews": {
+    "eyebrow": "Customer reviews",
+    "heading": "What drivers say about us",
+    "items": [
+      {
+        "rating": 5,
+        "quote": "Clear communication and a simple booking process.",
+        "name": "Customer A",
+        "detail": "Verified customer"
+      },
+      {
+        "rating": 5,
+        "quote": "The services were easy to understand.",
+        "name": "Customer B",
+        "detail": "Verified customer"
+      },
+      {
+        "rating": 5,
+        "quote": "A straightforward experience from start to finish.",
+        "name": "Customer C",
+        "detail": "Verified customer"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "heading": "Answers before you book",
+    "items": [
+      {
+        "question": "How can I request an estimate?",
+        "answer": "Use the contact form to prepare your inquiry and open your email client for sending."
+      },
+      {
+        "question": "Do you accept same-day appointments?",
+        "answer": "Contact the shop first to confirm scheduling."
+      },
+      {
+        "question": "What information should I share?",
+        "answer": "Describe your vehicle, the symptoms, and a preferred contact method."
+      },
+      {
+        "question": "Do you guarantee a repair quote online?",
+        "answer": "No. An inspection may be required before a final quote."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Request an estimate or ask a question",
+    "intro": "Tell us about your vehicle and what it is doing. We reply with appointment options or a straight answer — clearly explained, as always.",
+    "email": "contact@northstar.example",
+    "phone": "(555) 010-1200",
+    "phoneHref": "+15550101200",
+    "location_label": "Contact us for appointment details",
+    "subject": "Website Service Inquiry",
+    "form": {
+      "nameLabel": "Your name",
+      "namePlaceholder": "Jane Morgan",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "jane@example.com",
+      "messageLabel": "Vehicle & issue description",
+      "messagePlaceholder": "2018 Toyota Camry, 64,000 miles — grinding noise from the front brakes when stopping at low speed.",
+      "submitLabel": "Create email draft",
+      "successNote": "Your email app should open with a ready-to-send message. If it doesn't, email us directly at the address shown."
+    }
+  },
+  "footer": {
+    "description": "Northstar Auto Care. Service information and appointment inquiries.",
+    "navHeading": "Explore",
+    "contactHeading": "Get in touch",
+    "copyright": "© 2026 Northstar Auto Care. All rights reserved."
+  }
+}
