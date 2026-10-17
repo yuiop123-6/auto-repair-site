@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <a
         href="#main"
-        className="absolute -top-[60px] left-3 z-[200] rounded-b-md bg-safety px-[18px] py-2.5 font-semibold text-white no-underline transition-[top] duration-200 focus:top-0"
+        className="absolute -top-[60px] left-3 z-[200] rounded-b-md bg-safety px-[18px] py-2.5 font-semibold text-white no-underline focus:top-0"
       >
         Skip to main content
       </a>

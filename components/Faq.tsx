@@ -64,13 +64,13 @@ export function Faq() {
                     aria-expanded={open}
                     aria-controls={`faq-panel-${index}`}
                     onClick={() => toggle(index)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-4 border-0 bg-transparent px-[22px] py-[19px] text-left font-display text-[19px] font-semibold text-ink transition-colors hover:text-safety-dark"
+                    className="flex w-full cursor-pointer items-center justify-between gap-4 border-0 bg-transparent px-[22px] py-[19px] text-left font-display text-[19px] font-semibold text-ink hover:text-safety-dark"
                   >
                     <span>{item.question}</span>
                     <span
-                      className={`grid h-[30px] w-[30px] shrink-0 place-items-center rounded-full transition-all duration-300 ${
+                      className={`grid h-[30px] w-[30px] shrink-0 place-items-center rounded-full ${
                         open
-                          ? "rotate-45 bg-safety text-white"
+                          ? "bg-safety text-white"
                           : "bg-safety-tint text-safety"
                       }`}
                     >
@@ -85,7 +85,7 @@ export function Faq() {
                     id={`faq-panel-${index}`}
                     role="region"
                     aria-labelledby={`faq-button-${index}`}
-                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                    className={`grid ${
                       open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                     }`}
                   >

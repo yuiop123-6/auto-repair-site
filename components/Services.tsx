@@ -34,7 +34,7 @@ export function Services() {
           {services.items.map((item) => (
             <article
               key={item.name}
-              className="flex min-w-0 flex-col gap-3.5 rounded-[10px] border border-line bg-white px-[26px] py-7 transition-all duration-200 hover:-translate-y-1 hover:border-safety/60 hover:shadow-[0_14px_34px_rgba(21,26,34,.10)]"
+              className="flex min-w-0 flex-col gap-3.5 rounded-[10px] border border-line bg-white px-[26px] py-7 hover:border-safety/60 hover:shadow-[0_14px_34px_rgba(21,26,34,.10)]"
             >
               <div className="grid h-12 w-12 place-items-center rounded-[9px] bg-safety-tint text-safety">
                 <Icon
