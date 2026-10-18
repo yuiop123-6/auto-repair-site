@@ -11,7 +11,11 @@ type FieldId = "name" | "email" | "message";
 type Values = Record<FieldId, string>;
 type Errors = Record<FieldId, string>;
 
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+// Local part: common unreserved characters. Domain: dot-separated labels of
+// alphanumerics with inner hyphens only (no underscores, no consecutive/trailing
+// dots), ending in an alphabetic TLD of 2+ letters.
+const EMAIL_PATTERN =
+  /^[A-Za-z0-9._%+-]+@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
 
 /** Returns an error message, or "" when the value is valid. */
 function validate(field: FieldId, value: string): string {
@@ -54,6 +58,8 @@ export function ContactForm() {
 
   const setValue = (field: FieldId, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }));
+    // Any edit invalidates a previously shown success note.
+    setSuccessShown(false);
     // Live re-validate only while an error is displayed for the field.
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: validate(field, value) }));
@@ -93,8 +99,8 @@ export function ContactForm() {
       `?subject=${encodeURIComponent(contact.subject)}` +
       `&body=${encodeURIComponent(body)}`;
 
-    setSuccessShown(true);
-
+    // Try to open the mail client first; only then show the success note,
+    // so the note never claims a draft was created before the attempt.
     const link = document.createElement("a");
     link.href = mailto;
     link.rel = "noopener";
@@ -102,6 +108,8 @@ export function ContactForm() {
     document.body.appendChild(link);
     link.click();
     link.remove();
+
+    setSuccessShown(true);
   };
 
   const fieldShell = (field: FieldId) =>
