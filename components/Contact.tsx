@@ -3,6 +3,7 @@ import { Icon, type IconName } from "@/lib/icons";
 import { ContactForm } from "./ContactForm";
 
 const { contact } = content;
+const { info } = contact;
 
 type ContactItem = {
   icon: IconName;
@@ -13,7 +14,7 @@ type ContactItem = {
 const items: ContactItem[] = [
   {
     icon: "mail",
-    title: "Email",
+    title: info.emailTitle,
     body: (
       <a
         href={`mailto:${contact.email}`}
@@ -25,7 +26,7 @@ const items: ContactItem[] = [
   },
   {
     icon: "phone",
-    title: "Phone",
+    title: info.phoneTitle,
     body: (
       <a
         href={`tel:${contact.phoneHref}`}
@@ -37,7 +38,7 @@ const items: ContactItem[] = [
   },
   {
     icon: "pin",
-    title: "Workshop",
+    title: info.workshopTitle,
     body: <p className="text-[15px] text-steel">{contact.location_label}</p>,
   },
 ];
