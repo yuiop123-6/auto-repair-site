@@ -125,13 +125,7 @@
         "question": "Do you guarantee a repair quote online?",
         "answer": "No. An inspection may be required before a final quote."
       }
-    ],
-    "contactCard": {
-      "heading": "Still have a question?",
-      "description": "Send us your vehicle details and a preferred contact method, and we will reply with a straight answer.",
-      "buttonLabel": "Email the shop",
-      "subject": "General question"
-    }
+    ]
   },
   "contact": {
     "eyebrow": "Contact",
