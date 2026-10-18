@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { content } from "@/lib/content";
 import { Icon } from "@/lib/icons";
 
-const { brand, nav } = content;
+const { brand, nav, hero } = content;
+// The nav CTA reuses the hero primary CTA copy so the label lives in one place.
+const { primaryCta } = hero;
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -69,9 +71,9 @@ export function Header() {
 
         <a
           className="btn btn-primary hidden min-h-[42px] px-5 py-2.5 min-[900px]:inline-flex"
-          href="#contact"
+          href={primaryCta.href}
         >
-          Request an Estimate
+          {primaryCta.label}
         </a>
 
         {/* Mobile menu toggle */}
@@ -121,10 +123,10 @@ export function Header() {
         ))}
         <a
           className="btn btn-primary mt-3.5 w-full"
-          href="#contact"
+          href={primaryCta.href}
           onClick={() => setMenuOpen(false)}
         >
-          Request an Estimate
+          {primaryCta.label}
         </a>
       </nav>
     </header>

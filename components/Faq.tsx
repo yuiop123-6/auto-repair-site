@@ -5,6 +5,7 @@ import { content } from "@/lib/content";
 import { Icon } from "@/lib/icons";
 
 const { faq, contact } = content;
+const contactCard = faq.contactCard;
 
 export function Faq() {
   // Each item toggles independently, matching the reference behavior.
@@ -34,19 +35,18 @@ export function Faq() {
 
         <div className="grid gap-9 min-[900px]:grid-cols-[340px_1fr] min-[900px]:items-start min-[900px]:gap-[52px]">
           <aside className="self-start rounded-[10px] border border-line bg-white p-[26px]">
-            <h3 className="text-[22px]">Still have a question?</h3>
+            <h3 className="text-[22px]">{contactCard.heading}</h3>
             <p className="mt-2.5 text-[15px] text-steel">
-              Send us your vehicle details and a preferred contact method, and
-              we will reply with a straight answer.
+              {contactCard.description}
             </p>
             <a
               className="btn btn-primary mt-5 w-full"
               href={`mailto:${contact.email}?subject=${encodeURIComponent(
-                "General question",
+                contactCard.subject,
               )}`}
             >
               <Icon name="mail" />
-              Email the shop
+              {contactCard.buttonLabel}
             </a>
           </aside>
 

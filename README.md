@@ -39,6 +39,8 @@ npm run start    # 以生产模式启动
 | `contact.email` | 联系邮箱；联系表单生成的 mailto 草稿收件地址 |
 | `contact.subject` | 邮件草稿主题（Website Service Inquiry） |
 | `contact.phone` / `contact.phoneHref` | 展示电话与 tel: 链接 |
+| `faq.contactCard` | FAQ 区联系卡片（标题、描述、按钮文字、邮件主题） |
+| `hero.primaryCta` | 主按钮文案与跳转；顶部导航 CTA 复用同一字段 |
 | `hero.image` / `about.image` | 图片路径（`public/assets`）与 alt 文本 |
 
 ## 功能与验收
